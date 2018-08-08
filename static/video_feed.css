@@ -1,0 +1,31 @@
+#videoFeed {
+    margin: auto;
+    width: 640px;
+    height: 480px;
+    display: block;
+}
+
+.button_bar {
+    margin: auto;
+    width: 640px;
+    height: 480px;
+}
+
+.button {
+    float: left;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    padding: 14px 16px;
+    text-align: center
+}
+
+.button:disabled {
+    opacity: 0.5
+}
+
+.button:hover {
+    background-color: green;
+}

@@ -167,3 +167,6 @@ venv.bak/
 # Frame and face arrays
 model/faces.npy
 model/frame_array.npy
+
+#
+.idea/

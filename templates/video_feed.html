@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='video_feed.css') }}">
+     <script src="{{ url_for('static', filename='video_feed.js') }}"></script>
+    <meta charset="UTF-8">
+    <title>Video_feed</title>
+</head>
+<body>
+    <iframe id="videoFeed" src="/video_feed"></iframe>
+    <div class="button_bar">
+        <button id="photoButton" class="button" type="submit"> Take Photo </button>
+        <button id="lotteryButton" class="button" type="submit" disabled> Draw Winner </button>
+        <button id="redoButton" class="button" type="submit" disabled> Redo Photo </button>
+    </div>
+</body>
+</html>
