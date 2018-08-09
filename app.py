@@ -39,6 +39,14 @@ def gen_lottery(camera):
         yield (b'--frame\r\n' b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 
+def gen_audio():
+    sound = np.random.choice(os.listdir('sound'))
+    with open(os.path.join("sound", sound), "rb") as wav:
+        data = wav.read(1024)
+        while data:
+            yield data
+            data = wav.read(1024)
+
 @app.route('/video_feed')
 def video_feed():
     return Response(gen_video(video_camera), mimetype='multipart/x-mixed-replace; boundary=frame')
@@ -53,6 +61,9 @@ def photo_feed():
 def lottery_feed():
     return Response(gen_lottery(video_camera), mimetype='multipart/x-mixed-replace; boundary=frame')
 
+@app.route('/audio_feed')
+def audio_feed():
+    return Response(gen_audio(), mimetype='audio/x-wav')
 
 @app.route('/video')
 def video():
